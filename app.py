@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from random import sample
 import requests 
 import json
 
@@ -16,7 +17,8 @@ def index():
     }
 
     response = requests.get("https://api.tenor.com/v1/search", params=params).json()
-    gifs = response["results"]
+    gifs = sample(response["results"], 10)
+
     """Return homepage."""
     # TODO: Extract query term from url
 

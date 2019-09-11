@@ -15,17 +15,10 @@
 {% endblock %}
 
 {% block body %}
-    <form action='/'>
-        <p>
-            <input type="GIF Search" name="search_bar"/>
-            <button type="submit">Submit</button>
-        </p>
-    </form>
     {%if search_bar %}
         {% for gif in gifs %}
             {% include 'gif.html' %}
 
         {% endfor %}
     {% endif %}
-
 {% endblock %}
