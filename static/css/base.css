@@ -36,10 +36,9 @@ div input {
 
 #searchbar{
     width: 40%;
+    height: 20px;
 }
 
 .tenor-gif-embed {
     width: 33% !important;
-    float:left;
-    padding-right: 100px;
 }
