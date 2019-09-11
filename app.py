@@ -6,13 +6,12 @@ import json
 app = Flask(__name__)
 
 
-
 @app.route('/')
 def index():
 
     search_bar = request.args.get('search_bar')
-    if request.args.get('random') == True:
-        search_bar = "heat"
+    if request.args.get('random') == "random" or request.args.get('search_bar') == "":
+        search_bar = "random"
     params = {
         "q": search_bar,
         "key": "B76YW88VZ3MZ"
