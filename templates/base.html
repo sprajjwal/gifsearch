@@ -8,14 +8,19 @@
 
 <body>
     <header>
-
-        <p><u>BEST GIF SEARCH WEBSITE EVER!</u></p>
-
+        <a href='/'><p><u>BEST GIF SEARCH WEBSITE EVER!</u></p></a>
+        <form action='/' class="search">
+            <div style="display:flex;">
+                <input type="GIF Search" name="search_bar" id="search_bar"/>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </header>
-    <p></p>
 
     <!-- TODO: Make a block 'body' so that the homepage can extend base -->
-    {% block body %}{% endblock %}
+    <div class="gifs">
+        {% block body %}{% endblock %}
+    </div>
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately -->
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 </body>
