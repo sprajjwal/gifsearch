@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from random import sample
+from random import sample, choice
 import requests 
 import json
 
@@ -11,7 +11,11 @@ def index():
 
     search_bar = request.args.get('search_bar')
     if request.args.get('random') == "random" or request.args.get('search_bar') == "":
-        search_bar = "random"
+        f=open("static/random.txt", "r")
+        word_list = f.readlines()
+        f.close
+        word_list = word_list[0].split(' ')
+        search_bar = choice(word_list)
     params = {
         "q": search_bar,
         "key": "B76YW88VZ3MZ"
