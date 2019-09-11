@@ -11,6 +11,8 @@ app = Flask(__name__)
 def index():
 
     search_bar = request.args.get('search_bar')
+    if request.args.get('random') == True:
+        search_bar = "heat"
     params = {
         "q": search_bar,
         "key": "B76YW88VZ3MZ"
