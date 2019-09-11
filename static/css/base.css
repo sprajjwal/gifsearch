@@ -35,4 +35,5 @@ div input {
 
 .tenor-gif-embed {
     width: 33% !important;
+    float:left;
 }
