@@ -14,8 +14,10 @@ p {
     text-align: center;
 }
 
-div {
-    display:flex;
+.word {
+    margin-top: 40px;
+    text-align: center; 
+    font-family: sans-serif;
 }
 
 div input {
@@ -29,6 +31,7 @@ div input {
 }
 
 .gifs{
+    display: flex;
     flex-wrap: wrap;
     margin-top: 100px;
     justify-content: center;
