@@ -5,14 +5,12 @@ import json
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
-
     search_bar = request.args.get('search_bar')
-    status = False
-    while status == False:
-        if request.args.get('random') == "random" or request.args.get('search_bar') == "":
+    status = True
+    while status:
+        if request.args.get('random') == "random" or request.args.get('search_bar') == "" or request.args.get('search_bar') == None:
             f=open("static/random.txt", "r")
             word_list = f.readlines()
             f.close
@@ -22,12 +20,10 @@ def index():
             "q": search_bar,
             "key": "B76YW88VZ3MZ"
         }
-        response = requests.get("https://api.tenor.com/v1/search", params=params).json()
-        
-            
+        response = requests.get("https://api.tenor.com/v1/search", params=params).json()    
         gifs = response["results"][0:10]
-        if gifs:
-            status = True
+        if gifs or request.args.get('search_bar'):
+            status = False
 
     """Return homepage."""
     return render_template("index.html", response=response, gifs=gifs, search_bar= search_bar)
