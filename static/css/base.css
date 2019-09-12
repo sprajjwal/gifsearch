@@ -1,5 +1,8 @@
 body {
-    background-color: blanchedalmond;
+    background: url("/static/images/base-bg.png");
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin:0;
 }
 header {
