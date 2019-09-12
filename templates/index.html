@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    {% if gif %}
+    {% if gifs %}
         {% for gif in gifs %}
             {% include 'gif.html' %}
         {% endfor %}
     {% else %}
         <p>Oops! We couldn't find anything! Try again</p>
-
+    {% endif %}
 {% endblock %}
